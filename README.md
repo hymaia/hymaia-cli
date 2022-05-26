@@ -5,7 +5,7 @@ C'est parti d'un délire sur nos valeurs qui formaient PIP avec leurs premières
 Grâce à cette CLI vous en apprendrez plus sur [Hymaïa](https://www.hymaia.com/) avec humour et légèreté.
 
 ## Tests
-Pour le moment c'est pas bien j'en ai fait qu'un tout bidon, mais faut dire j'ai quasi que des println donc bon. Des tests E2E serait pas mal ! On verra...
+Pour le moment, c'est pas bien j'en ai fait qu'un tout bidon, mais faut dire j'ai quasi que des println donc bon. Des tests E2E serait pas mal ! On verra...
 
 Pour le lancer :
 ```bash

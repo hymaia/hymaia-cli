@@ -1,11 +1,11 @@
 package fr.hymaia
 
+import fr.hymaia.exercise.Exercise
 import picocli.CommandLine
 import picocli.CommandLine.{Command, HelpCommand}
 
 @Command(name = "hymaia", version = Array("4.1.4"),
-  mixinStandardHelpOptions = true,
-  subcommands = Array(classOf[Values], classOf[Why], classOf[Join], classOf[HelpCommand]),
+  subcommands = Array(classOf[Values], classOf[Why], classOf[Join], classOf[HelpCommand], classOf[Exercise]),
   description = Array("Hymaia CLI to get fun data about us"))
 class Main extends Runnable {
   @CommandLine.Spec
