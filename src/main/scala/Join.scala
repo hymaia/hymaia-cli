@@ -56,7 +56,7 @@ case object DataProductManager extends Job {
   override val name: String = "Data Product Manager"
   override val url: String = "https://www.hymaia.com/jobs/data-product-manager"
   override val test: String =
-    """Comment mesurerais-tu la valeur business d'un modèle de machine learning ?
+    """Comment expliquerais-tu à ton collègue ce qu'est un "Produit Data" ?
       |
       |N'hésite pas à détailler, à inventer ton contexte ou à nous raconter une
       |de tes expériences. Nous lirons avec attention !
