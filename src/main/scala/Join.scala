@@ -45,7 +45,7 @@ case object DataScientist extends Job {
   override val name: String = "Data Science / ML engineer"
   override val url: String = "https://www.hymaia.com/jobs/data-scientist-ml-engineer"
   override val test: String =
-    """Quelle est ta démarche pour concevoir un modèle de machine learning ?
+    """Qu'elle est ta démarche pour passer du PoC à la production ?
       |
       |N'hésite pas à détailler, à inventer ton contexte ou à nous raconter une
       |de tes expériences. Nous lirons avec attention !
