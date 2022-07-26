@@ -10,7 +10,7 @@ libraryDependencies ++= Seq(
   "info.picocli" % "picocli" % "4.6.3",
   "info.picocli" % "picocli-codegen" % "4.6.3" % "provided",
   "org.scalatest" %% "scalatest" % "3.2.12" % "test",
-  "com.softwaremill.sttp.client3" %% "core" % "3.6.2"
+  "org.scalaj" % "scalaj-http_2.13" % "2.4.2",
 )
 
 lazy val processAnnotations = taskKey[Unit]("Process annotations")
@@ -43,5 +43,9 @@ def failIfNonZeroExitStatus(command: String, message: => String, log: Logger) = 
 }
 
 packageBin in Compile := (packageBin in Compile dependsOn (processAnnotations in Compile)).value
+
+graalVMNativeImageOptions := Seq(
+  "--enable-https",
+)
 
 enablePlugins(GraalVMNativeImagePlugin)
