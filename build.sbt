@@ -7,9 +7,9 @@ scalaVersion := "2.13.8"
 idePackagePrefix := Some("fr.hymaia")
 
 libraryDependencies ++= Seq(
-  "info.picocli" % "picocli" % "4.6.3",
-  "info.picocli" % "picocli-codegen" % "4.6.3" % "provided",
-  "org.scalatest" %% "scalatest" % "3.2.12" % "test",
+  "info.picocli" % "picocli" % "4.7.3",
+  "info.picocli" % "picocli-codegen" % "4.7.3" % "provided",
+  "org.scalatest" %% "scalatest" % "3.2.15" % "test",
   "org.scalaj" % "scalaj-http_2.13" % "2.4.2",
 )
 

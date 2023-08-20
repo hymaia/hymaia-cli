@@ -90,14 +90,6 @@ case object DataScientologist extends Job {
   override val test: String = ""
 }
 
-case object Horgix extends Job {
-  override val name: String = "Horgix"
-  override val url: String = "https://4mbrdmujw8.execute-api.eu-west-1.amazonaws.com/Prod/hello"
-  override lazy val description: String =
-    """Oh mais que s'est-il passé ?? Cherche bien, quelque chose est peut-être apparue :) """.stripMargin
-  override val test: String = ""
-}
-
 @Command(name = "join", description = Array("If you want to join us"))
 class Join extends Runnable {
 
@@ -115,9 +107,6 @@ class Join extends Runnable {
 
   @Option(names = Array("--data-scientologist"), description = Array("You will see what happened"))
   private var dataScientologist = false
-
-  @Option(names = Array("--horgix"), description = Array("You will see what happened"))
-  private var horgix = false
 
   override def run(): Unit = {
     val txt = s"""Nos Postes :
@@ -141,11 +130,6 @@ class Join extends Runnable {
     else if (dataScientologist) {
       println(txt.format(DataScientologist))
     }
-    else if (horgix) {
-      val request = Http(Horgix.url).asString
-      writeByte(Base64.getDecoder.decode(request.body))
-      println(Horgix.description)
-    }
     else {
       println(txt.format(
         s"""$DataEngineer
@@ -157,14 +141,5 @@ class Join extends Runnable {
            |$DataStrategist
            |""".stripMargin))
     }
-  }
-
-
-  def writeByte(bytes: Array[Byte]): Unit = {
-    val file: File = new File("horgix.pdf")
-    val os = new FileOutputStream(file)
-
-    os.write(bytes)
-    os.close()
   }
 }

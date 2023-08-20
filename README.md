@@ -13,7 +13,7 @@ sbt test
 ```
 
 ## Packaging
-Pour vous épargner l'installation de l'enfer de GraalCM vous me remercierez j'ai créé un Dockerfile qui s'occupe du packaging. Vous aurez besoin de [docker en mode buildkit](https://docs.docker.com/develop/develop-images/build_enhancements/) pour récupérer le binaire à la fin.
+Pour vous épargner l'installation de l'enfer de GraalVM vous me remercierez j'ai créé un Dockerfile qui s'occupe du packaging. Vous aurez besoin de [docker en mode buildkit](https://docs.docker.com/develop/develop-images/build_enhancements/) pour récupérer le binaire à la fin.
 ```bash
 docker build -o type=local,dest=./ .
 ```
@@ -22,22 +22,27 @@ Un fichier nommé hymaia apparaitra à la racine du repo.
 ## La CLI
 Tout est dans le helper :
 ```bash
-$ ./hymaia -h
-Usage: hymaia [-hV] [COMMAND]
+$ ./hymaia help
+Usage: hymaia [COMMAND]
 Hymaia CLI to get fun data about us
-  -h, --help      Show this help message and exit.
-  -V, --version   Print version information and exit.
 Commands:
-  values  Get Hymaïa values
-  why     Understand why Hymaïa exist
-  join    If you want to join us
-  help    Displays help information about the specified command
+  fromagerie  Jouer à la fromagerie virtuelle
+  help        Display help information about the specified command.
+
+$ ./hymaia fromagerie help
+Usage: hymaia fromagerie [COMMAND]
+Jouer à la fromagerie virtuelle
+Commands:
+  signup      S'inscrire au jeu
+  confirm     Confirmer son adresse mail
+  signin      Récupérer son token pour jouer
+  refresh     Récupérer son token pour jouer
+  sendresult  Envoyer son fichier json de résultat
+  score       Récupérer le classement des joueurs et son score
+  help        Display help information about the specified command.
 ```
 
 ## FAQ
-#### Pourquoi tout est statique dans des `println` ? C'est pas pratique de devoir repackager pour un changement de texte
-Au début je voulais stocker le texte dans un bucket S3 et les télécharger mais je connais pas bien GraalVM et quand j'ajoute les dépendances aws sdk ba ça compile plus :/
-
 #### À quoi sert GraalVM ?
 Grâce à GraalVM je peux produire un binaire natif linux qui n'a pas besoin d'une JVM pour fonctionner.
 
